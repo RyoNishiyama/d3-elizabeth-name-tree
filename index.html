@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+  <h1>“Elizabeth” related names in England and Wales, 1996-2021</h1>
+  <script>
+
+    let nameList = {
+      "name": "Elizabeth",
+      "value": 37058,
+      children: [
+        { "name": "Bess", "value": 123 },
+        { "name": "Bessie", "value": 383 },
+        {
+          "name": "Beth", "value": 6396,
+          children: [
+            { "name": "Beth-Anne", "value": 10 },
+            { "name": "Amy-Beth", "value": 8 },
+            { "name": "Laura-Beth", "value": 13 },
+            { "name": "Lilly-Beth", "value": 3 },
+            { "name": "Lily-Beth", "value": 71 },
+            { "name": "Mary-Beth", "value": 28 },
+            { "name": "Millie-Beth", "value": 4 },
+            { "name": "Rosie-Beth", "value": 3 },
+            { "name": "Sarah-Beth", "value": 3 }
+          ]
+        },
+        { "name": "Betsey", "value": 69 },
+        {
+          "name": "Betsy", "value": 4428,
+          children: [
+            { "name": "Betsy-Blu", "value": 11 },
+            { "name": "Betsy-Bo", "value": 3 },
+            { "name": "Betsy-Lou", "value": 30 },
+            { "name": "Betsy-Mae", "value": 41 },
+            { "name": "Betsy-May", "value": 17 },
+            { "name": "Betsy-Rae", "value": 28 },
+            { "name": "Betsy-Rose", "value": 54 },
+          ]
+        },
+        { "name": "Bette", "value": 15 },
+        { "name": "Bettie", "value": 112 },
+        {
+          "name": "Betty", "value": 1652,
+          children: [
+            { "name": "Betty-Lou", "value": 14 },
+            { "name": "Betty-Mae", "value": 3 },
+            { "name": "Betty-May", "value": 10 },
+            { "name": "Betty-Rose", "value": 19 },
+          ]
+        },
+        { "name": "Buffy", "value": 3 },
+        {"name": "Eli", "value": 127},
+        {
+          "name": "Elissa", "value": 1641,
+          children: [{ "name": "Elissa-Mae", "value": 3 }
+          ]
+        },
+        {
+          "name": "Eliza", "value": 16497,
+          children: [
+            { "name": "Eliza-Ann", "value": 3 },
+            { "name": "Eliza-Beth", "value": 3 },
+            { "name": "Eliza-Grace", "value": 66 },
+            { "name": "Eliza-Jane", "value": 17 },
+            { "name": "Eliza-Jean", "value": 3 },
+            { "name": "Eliza-Jo", "value": 3 },
+            { "name": "Eliza-Lilly", "value": 3 },
+            { "name": "Eliza-Lily", "value": 13 },
+            { "name": "Eliza-Louise", "value": 6 },
+            { "name": "Eliza-Mae", "value": 118 },
+            { "name": "Eliza-Mai", "value": 29 },
+            { "name": "Eliza-Marie", "value": 7 },
+            { "name": "Eliza-May", "value": 54 },
+            { "name": "Eliza-Noor", "value": 3 },
+            { "name": "Eliza-Rae", "value": 49 },
+            { "name": "Eliza-Rose", "value": 178 }
+          ]
+        },
+        {
+          "name": "Elizabeth", "value": 37058,
+          children: [
+            { "name": "Elizabeth-Ann", "value": 3 },
+            { "name": "Elizabeth-Grace", "value": 7 },
+            { "name": "Elizabeth-May", "value": 6 },
+            { "name": "Elizabeth-Rose", "value": 93 },
+            { "name": "Amelia-Elizabeth", "value": 3 },
+            { "name": "Ava-Elizabeth", "value": 10 },
+            { "name": "Emily-Elizabeth", "value": 8 },
+            { "name": "Evie-Elizabeth", "value": 3 },
+            { "name": "Grace-Elizabeth", "value": 13 },
+            { "name": "Hope-Elizabeth", "value": 3 },
+            { "name": "Ivy-Elizabeth", "value": 7 },
+            { "name": "Mary-Elizabeth", "value": 3 },
+            { "name": "Poppy-Elizabeth", "value": 3 }
+          ]
+        },
+        { "name": "Ellee", "value": 124 },
+        {
+          "name": "Elly", "value": 601,
+          children: [
+            { "name": "Elly-Mae", "value": 3 },
+            { "name": "Elly-May", "value": 16 }
+          ]
+        },
+        {
+          "name": "Elsie", "value": 18514,
+          children: [
+            { "name": "Elsie-", "value": 5 },
+            { "name": "Elsie-Ann", "value": 19 },
+            { "name": "Elsie-Anne", "value": 15 },
+            { "name": "Elsie-Beau", "value": 3 },
+            { "name": "Elsie-Belle", "value": 5 },
+            { "name": "Elsie-Grace", "value": 69 },
+            { "name": "Elsie-Jade", "value": 3 },
+            { "name": "Elsie-Jae", "value": 6 },
+            { "name": "Elsie-Jane", "value": 26 },
+            { "name": "Elsie-Jayne", "value": 12 },
+            { "name": "Elsie-Jean", "value": 12 },
+            { "name": "Elsie-Jo", "value": 21 },
+            { "name": "Elsie-Lee", "value": 7 },
+            { "name": "Elsie-Leigh", "value": 40 },
+            { "name": "Elsie-Lou", "value": 50 },
+            { "name": "Elsie-Louise", "value": 29 },
+            { "name": "Elsie-Mae", "value": 742 },
+            { "name": "Elsie-Mai", "value": 175 },
+            { "name": "Elsie-Marie", "value": 37 },
+            { "name": "Elsie-May", "value": 503 },
+            { "name": "Elsie-Rae", "value": 155 },
+            { "name": "Elsie-Rai", "value": 3 },
+            { "name": "Elsie-Rose", "value": 399 },
+            { "name": "Elsie-Violet", "value": 3 }
+          ]
+        },
+        { "name": "Elyse", "value": 741 },
+        { "name": "Ibbie", "value": 3 },
+        {
+          "name": " Isabel", "value": 19927,
+          children: [
+            { "name": "Isabel-Rose", "value": 10 },
+            { "name": "Isabell", "value": 621 },
+            { "name": "Isabella", "value": 53392 },
+            { "name": "Isabella-Grace", "value": 125 },
+            { "name": "Isabella-Hope", "value": 5 },
+            { "name": "Isabella-Ivy", "value": 6 },
+            { "name": "Isabella-Louise", "value": 9 },
+            { "name": "Isabella-Mae", "value": 72 },
+            { "name": "Isabella-Mai", "value": 16 },
+            { "name": "Isabella-Marie", "value": 4 },
+            { "name": "Isabella-May", "value": 45 },
+            { "name": "Isabella-Paige", "value": 3 },
+            { "name": "Isabella-Rae", "value": 24 },
+            { "name": "Isabella-Rose", "value": 591 },
+            { "name": "Poppy-Isabella", "value": 3 },
+            { "name": "Isabelle", "value": 43249 },
+            { "name": "Isabelle-Grace", "value": 8 },
+            { "name": "Isabelle-Mae", "value": 10 },
+            { "name": "Isabelle-Rose", "value": 101 }
+          ]
+        },
+        { "name": "Issy", "value": 19 },
+        { "name": "Izabelle", "value": 876 },
+        {
+          "name": "Izzie", "value": 286,
+          children: [
+            { "name": "Izzie-Mae", "value": 7 },
+          ]
+        },
+        {
+          "name": "Izzy", "value": 989,
+          children: [
+            { "name": "Izzy-Mae", "value": 12 },
+            { "name": "Izzy-Mai", "value": 4 },
+            { "name": "Izzy-May", "value": 3 },
+          ]
+        },
+        { "name": "Leesa", "value": 3 },
+        {
+          "name": "Libby", "value": 14157,
+          children: [
+            { "name": "Libby-", "value": 4 },
+            { "name": "Libby-Ann", "value": 3 },
+            { "name": "Libby-Anne", "value": 6 },
+            { "name": "Libby-Grace", "value": 9 },
+            { "name": "Libby-Jane", "value": 3 },
+            { "name": "Libby-Jo", "value": 21 },
+            { "name": "Libby-Leigh", "value": 3 },
+            { "name": "Libby-Louise", "value": 14 },
+            { "name": "Libby-Mae", "value": 81 },
+            { "name": "Libby-Mai", "value": 32 },
+            { "name": "Libby-Marie", "value": 4 },
+            { "name": "Libby-May", "value": 64 },
+            { "name": "Libby-Rae", "value": 6 },
+            { "name": "Libby-Rose", "value": 80 }
+          ]
+        },
+        { "name": "Lis", "value": 3 },
+        {
+          "name": "Lisa", "value": 3392,
+          children: [
+            { "name": "Lisa-Marie", "value": 260 },
+            { "name": "Anna-Lisa", "value": 3 }
+          ]
+        },
+        { "name": "Liz", "value": 84 },
+        { "name": "Liza", "value": 413 },
+        { "name": "Lizzie", "value": 261 },
+        { "name": "Lizzy", "value": 80 },
+        { "name": "Lysette", "value": 4 },
+        { "name": "Sabella", "value": 33 },
+        { "name": "Sissy", "value": 19 }
+      ]
+    }
+
+    // set the dimensions and margins of the diagram
+    const margin = { top: 20, right: 150, bottom: 30, left: 150 },
+      width = 1000 - margin.left - margin.right,
+      height = 1700 - margin.top - margin.bottom;
+
+    // declares a tree layout and assigns the size
+    const treemap = d3.tree().size([height, width]);
+
+    // assigns the data to a hierarchy using parent-child relationships
+    let nodes = d3.hierarchy(nameList, d => d.children);
+
+    // set class when mouseover
+    function mouseovered(active) {
+      return function (event, d) {
+        if (!active) {
+          tooltip.style("opacity", 0);
+        } else {
+          tooltip.style("opacity", 1)
+            .html(d.data.name + "<br>" + d.data.value + " people")
+            .style("left", event.pageX + 20 + "px")
+            .style("top", event.pageY + 15 + "px");
+        }
+        d3.select(this).classed("label--active", active);
+        d3.selectAll("circle").attr("fill", "#ff5e85");
+        do d3.select(d.linkNode).classed("link--active", active);
+        while (d = d.parent);
+      };
+    }
+
+    // maps the node data to the tree layout
+    nodes = treemap(nodes);
+
+    // append the svg object to the body of the page
+    // appends a 'group' element to 'svg'
+    // moves the 'group' element to the top left margin
+    const svg = d3.select("body").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom);
+    //.attr("font-size", 10);
+    g = svg.append("g")
+      .attr("stroke-opacity", 0.4)
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+    // adds the links between the nodes
+    const link = g.selectAll(".link")
+      .data(nodes.descendants().slice(1))
+      .enter().append("path")
+      .attr("class", "link")
+      .style("fill", "none")
+      .style("stroke", "black")
+      .each(function (d) { d.linkNode = this; })
+      .attr("d", d => {
+        return "M" + d.y + "," + d.x
+          + "C" + (d.y + d.parent.y) / 2 + "," + d.x
+          + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
+          + " " + d.parent.y + "," + d.parent.x;
+      });
+
+    // adds each node as a group
+    const node = g.selectAll(".node")
+      .data(nodes.descendants())
+      .enter().append("g")
+      .attr("class", d => "node" + (d.children ? " node--internal" : " node--leaf"))
+      .attr("transform", d => "translate(" + d.y + "," + d.x + ")");
+
+    // adds the circle to the node
+    node.append("circle")
+      .attr("fill", "#ff5e85")
+      .attr("r", 5);
+
+    // adds the text to the node
+    node.append("text")
+      .attr("dy", "0.32em")
+      .attr("x", d => d.children ? -6 : 6)
+      .attr("font-size", d => d.depth === 0 ? "1.5rem" : d.depth === 1 ? "1rem" : ".8rem")
+      .style("text-anchor", d => d.children ? "end" : "start")
+      .text(d => d.data.name)
+      .on("mouseover", mouseovered(true))
+      .on("mouseout", mouseovered(false));
+
+    // tooltip
+    const tooltip = d3.select("body")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0)
+      .style("background-color", "white")
+      .style("padding", "5px")
+      .style("position", "absolute");
+
+  </script>
+  <style>
+    body {
+      text-align: center;
+      font-family: Sans-Serif;
+    }
+
+    .link--active {
+      stroke-width: 2px;
+      stroke-opacity: 1;
+    }
+
+    .label--active {
+      font-weight: bold;
+    }
+  </style>
+</body>
+
+</html>
